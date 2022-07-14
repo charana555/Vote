@@ -28,9 +28,9 @@ const Dashboard = () => {
   };
 
 // ------------------------Getting Voter information ----------------------  
-  const getUserData = async () => {
+  const getUserData =  () => {
     const docRef = doc(firestore , "users" , currentUser.email); 
-    try {
+     try{
        onSnapshot(docRef ,(doc) =>{
         setUser(doc.data())
       } );
@@ -70,6 +70,7 @@ const Dashboard = () => {
     }
 
   useEffect(() =>{
+
     getUserData();
     getGroupData();
   },[])
